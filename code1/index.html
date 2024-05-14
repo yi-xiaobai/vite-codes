@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>vite初体验</title>
+  </head>
+  <body>
+    <!-- <script type="module" src="./main.js"></script> -->
+
+    <!-- 支持esmodule -->
+    <script type="module">
+      // 浏览器不知道node_modules这个东西
+      import _ from "lodash";
+      console.log("==>Get _", _);
+    </script>
+  </body>
+</html>
