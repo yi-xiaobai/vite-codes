@@ -1,0 +1,1 @@
+console.log('==>Get import.meta.env', import.meta.env);

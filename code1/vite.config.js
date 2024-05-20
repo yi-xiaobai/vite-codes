@@ -1,5 +1,5 @@
 // 通过vite引入 defineConfig 函数
-import { defineConfig } from "vite";
+import { defineConfig, loadEnv } from "vite";
 import viteBaseConfig from "./vite.base.config";
 import viteDevConfig from "./vite.dev.config";
 import viteProdConfig from "./vite.prod.config";
@@ -7,11 +7,11 @@ import viteProdConfig from "./vite.prod.config";
 
 // 通过策略模式替代if else 
 const envResolves = {
-    'build': () => {
+    'production': () => {
         console.log('生产环境哦~~~');
         return Object.assign({}, viteBaseConfig, viteProdConfig)
     },
-    'serve': () => {
+    'development': () => {
         console.log('开发环境哦~~~');
         return Object.assign({}, viteBaseConfig, viteDevConfig)
     }
@@ -20,8 +20,13 @@ const envResolves = {
 
 // 导出文件用该函数即可有提示
 export default defineConfig((params) => {
+    const { command, mode } = params
     console.log('==>Get params', params);
-    return envResolves[params.command]()
+    const env = loadEnv(mode, process.cwd(), '')
+    // const env = process.env
+    // console.log('==>Get env', env);
+    console.log('==>Get env', env);
+    return envResolves[mode]()
 });
 
 
