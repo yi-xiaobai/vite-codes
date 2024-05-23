@@ -22,4 +22,6 @@
 
 [vite配置css（module篇）](11.vite配置css（module篇）.md)
 
+[vite配置css（preprocessorOptions篇）](12.vite配置css（preprocessorOptions篇）.md)
+
 []()

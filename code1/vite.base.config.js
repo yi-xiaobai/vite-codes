@@ -5,7 +5,9 @@ export default defineConfig({
     optimizeDeps: {
         exclude: [],    // 指定的数组中不进行依赖预构建
     },
-    css: {
+    css: { // 对css的行为进行配置
+
+        // 对css的模块化默认行为进行配置
         modules: {
             localsConvention: 'camelCase',
             // 是否开启模块化
@@ -23,7 +25,22 @@ export default defineConfig({
             //     return ''
             // },
             hashPrefix: "hello",
-            // globalModulePaths: ['./componentB.module.css']
-        }
+            globalModulePaths: ['./componentB.module.css']
+        },
+
+        // key + value
+        // key代表预处理器的名
+        preprocessorOptions: {
+            less: {
+                // 针对于100px / 2 计算等操作
+                math: 'always',
+                globalVars: {// 全局变量
+                    mainColor: 'red'
+                }
+            },
+
+            // 还有sass
+        },
+        devSourcemap: true
     }
 })
