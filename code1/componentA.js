@@ -1,6 +1,6 @@
 import componentsAModule from './componentA.module.css'
 import componentAModuleLess from './componentA.module.less'
-console.log('==>Get ', componentsAModule, componentAModuleLess);
+console.log('==>Get componentsAModule', componentsAModule, 'componentAModuleLess', componentAModuleLess);
 
 // 创建一个标签 div
 const div = document.createElement('div')

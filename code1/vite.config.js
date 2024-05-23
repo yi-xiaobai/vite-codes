@@ -25,7 +25,7 @@ export default defineConfig((params) => {
     const env = loadEnv(mode, process.cwd(), '')
     // const env = process.env
     // console.log('==>Get env', env);
-    console.log('==>Get env', env);
+    // console.log('==>Get env', env);
     return envResolves[mode]()
 });
 

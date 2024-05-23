@@ -1,5 +1,5 @@
 import componentsBModule from './componentB.module.css'
-console.log('==>Get ', componentsBModule);
+console.log('==>Get componentsBModule', componentsBModule);
 
 // 创建一个标签 div
 const div = document.createElement('div')
