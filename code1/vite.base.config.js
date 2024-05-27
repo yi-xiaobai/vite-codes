@@ -38,9 +38,10 @@ export default defineConfig({
                     mainColor: 'red'
                 }
             },
-
             // 还有sass
         },
+
+        // 说白了 文件对应的css文件索引
         devSourcemap: true
     }
 })
