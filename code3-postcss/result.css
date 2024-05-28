@@ -1,0 +1,9 @@
+/* css新提案 */
+:root {
+  --globalColor: red;
+}
+
+div {
+  background-color: red;
+  background-color: var(--globalColor);
+}

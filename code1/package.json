@@ -15,7 +15,9 @@
     "minidev": "^2.1.7"
   },
   "devDependencies": {
+    "@csstools/postcss-global-data": "^2.1.1",
     "lodash-es": "^4.17.21",
+    "postcss-preset-env": "^9.5.14",
     "vite": "^5.2.10"
   }
 }

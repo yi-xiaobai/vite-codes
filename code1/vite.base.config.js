@@ -1,5 +1,9 @@
 import { defineConfig } from "vite";
 
+const path = require('path')
+const postcssGlobalData = require('@csstools/postcss-global-data')
+const postcssPresetEnv = require('postcss-preset-env')
+
 
 export default defineConfig({
     optimizeDeps: {
@@ -42,6 +46,19 @@ export default defineConfig({
         },
 
         // 说白了 文件对应的css文件索引
-        devSourcemap: true
+        devSourcemap: true,
+
+        postcss: {
+            plugins: [
+                postcssGlobalData({
+                    files: [
+                        path.resolve(__dirname, './variable.css')
+                    ]
+                }),
+                postcssPresetEnv({
+                    // importFrom: path.resolve(__dirname, './variable.css')   // 让postcss知道 有一些全局变量它需要知道
+                })
+            ]
+        }
     }
 })

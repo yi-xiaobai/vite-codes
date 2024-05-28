@@ -1,0 +1,5 @@
+/* 使用的一些未来的一些css属性 不需要通过less、sass预处理器进行处理 可以交给postcss进行处理 */
+
+:root {
+  --globalColor: red;
+}
