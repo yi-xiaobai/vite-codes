@@ -28,16 +28,16 @@ app.use(async (ctx, next) => {
     }
 
 
-    if (ctx.request.url === '/App.vue') {
-        const mainVueContent = await fs.promises.readFile(path.join(__dirname, './App.vue'))
-        // Vue文件会做一个字符串替换
+    // if (ctx.request.url === '/App.vue') {
+    //     const mainVueContent = await fs.promises.readFile(path.join(__dirname, './App.vue'))
+    //     // Vue文件会做一个字符串替换
 
-        // 浏览器和服务器 文件都是字符串
-        // 设置响应类型
-        ctx.set('Content-Type', 'application/x-javascript')
-        ctx.body = mainVueContent
+    //     // 浏览器和服务器 文件都是字符串
+    //     // 设置响应类型
+    //     ctx.set('Content-Type', 'application/x-javascript')
+    //     ctx.body = mainVueContent
 
-    }
+    // }
 })
 
 

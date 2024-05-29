@@ -9,6 +9,12 @@ export default defineConfig({
     optimizeDeps: {
         exclude: [],    // 指定的数组中不进行依赖预构建
     },
+    resolve: {
+        alias: {
+            '@': path.resolve(__dirname, './src'),
+            '@assets': path.resolve(__dirname, './src/assets'),
+        }
+    },
     css: { // 对css的行为进行配置
 
         // 对css的模块化默认行为进行配置
@@ -60,5 +66,16 @@ export default defineConfig({
                 })
             ]
         }
+    },
+
+    build: {    //* 构建生产产物的一些配置策略
+        rollupOptions: {
+            output: {
+                assetFileNames: '[hash]-[name].[ext]'   //* 静态资源生产环境重命名
+            }
+        },
+        assetsInlineLimit: 4096000, //* 小于此阈值的导入或引用资源将内联为 base64 编码  避免额外的http请求
+        outDir: 'dist',    //* 输出的的文件名
+        assetsDir: 'assets' //* 静态资源存放文件名
     }
 })

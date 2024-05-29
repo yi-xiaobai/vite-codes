@@ -1,12 +1,11 @@
-import { count } from './counter.js'
-import _ from 'lodash'
-import lodashEs from 'lodash-es'
-import './variable.css'
-import './index.css'
-import './request.js'
+import './src/imageLoaders'
+
+import './src/svgLoaders'
 
 
-import './componentA.js'
-import './componentB.js'
+//* 按需引入即可即控制导入
+import jsonFile from './src/assets/json/index.json'
 
-console.log('==>Get count');
+//* 如果没有使用vite构建工具 那么json文件的导入 会以一个字符串的形式存在
+//* tree shaking 遥树优化：打包工具会自动帮你移除那些你没用到的变量或者方法
+console.log('==>Get jsonFile', jsonFile);   // {name: 'alice', age: '20'}
