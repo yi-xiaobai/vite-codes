@@ -1,4 +1,5 @@
 import { defineConfig } from "vite";
+import { ViteAliases } from "./plugins/ViteAliases";
 
 const path = require('path')
 const postcssGlobalData = require('@csstools/postcss-global-data')
@@ -6,15 +7,16 @@ const postcssPresetEnv = require('postcss-preset-env')
 
 
 export default defineConfig({
+    plugins: [ViteAliases({})],
     optimizeDeps: {
         exclude: [],    // 指定的数组中不进行依赖预构建
     },
-    resolve: {
-        alias: {
-            '@': path.resolve(__dirname, './src'),
-            '@assets': path.resolve(__dirname, './src/assets'),
-        }
-    },
+    // resolve: {
+    //     alias: {
+    //         '@': path.resolve(__dirname, './src'),
+    //         '@assets': path.resolve(__dirname, './src/assets'),
+    //     }
+    // },
     css: { // 对css的行为进行配置
 
         // 对css的模块化默认行为进行配置

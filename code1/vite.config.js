@@ -22,9 +22,8 @@ const envResolves = {
 export default defineConfig((params) => {
     const { command, mode } = params
     console.log('==>Get params', params);
-    const env = loadEnv(mode, process.cwd(), '')
+    // const env = loadEnv(mode, process.cwd(), '')
     // const env = process.env
-    // console.log('==>Get env', env);
     // console.log('==>Get env', env);
     return envResolves[mode]()
 });
