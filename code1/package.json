@@ -18,6 +18,7 @@
     "@csstools/postcss-global-data": "^2.1.1",
     "lodash-es": "^4.17.21",
     "postcss-preset-env": "^9.5.14",
-    "vite": "^5.2.10"
+    "vite": "^5.2.10",
+    "vite-plugin-html": "^3.2.2"
   }
 }

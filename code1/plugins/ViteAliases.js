@@ -24,7 +24,7 @@ function diffDirAndFile(dirs, prefix) {
 function getTotalDir(prefix) {
     const filePath = path.resolve(__dirname, "..", "./src")
     const dirs = fs.readdirSync(filePath)
-    console.log('==>Get dirs', dirs);
+    // console.log('==>Get dirs', dirs);
     return diffDirAndFile(dirs, prefix)
 }
 
@@ -36,7 +36,7 @@ export function ViteAliases(params = {}) {
     return {
         name: 'my-custon-vite-alias',
         config(config, env) {
-            console.log('==>Get config', config, env);
+            // console.log('==>Get config', config, env);
             params.prefix = params.prefix || '@'
             return {
                 resolve: {
