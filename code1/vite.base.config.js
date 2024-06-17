@@ -2,6 +2,8 @@ import { defineConfig } from "vite";
 import { ViteAliases } from "./plugins/ViteAliases";
 import { CreateHtmlPlugins } from "./plugins/CreateHtmlPlugins";
 import { createHtmlPlugin } from 'vite-plugin-html'
+import { viteMockServe } from 'vite-plugin-mock'
+import { ViteMockPlugins } from "./plugins/ViteMockPlugins";
 
 const path = require('path')
 const postcssGlobalData = require('@csstools/postcss-global-data')
@@ -11,29 +13,33 @@ const postcssPresetEnv = require('postcss-preset-env')
 export default defineConfig({
     plugins: [
         ViteAliases({}),
-        // createHtmlPlugin({
-        //     inject: {
-        //         data: {
-        //             title: 'vite 启动'
-        //         },
-        //         tags: [
-        //             {
-        //                 injectTo: 'body',
-        //                 tag: 'div',
-        //                 attrs: {
-        //                     id: 'tag'
-        //                 }
-        //             }
-        //         ]
-        //     }
-        // }),
-        CreateHtmlPlugins({
+        createHtmlPlugin({
             inject: {
                 data: {
-                    title: '自定义的html-plugins'
-                }
+                    title: 'vite 启动'
+                },
+                tags: [
+                    {
+                        injectTo: 'body',
+                        tag: 'div',
+                        attrs: {
+                            id: 'tag'
+                        }
+                    }
+                ]
             }
-        })
+        }),
+        // CreateHtmlPlugins({
+        //     inject: {
+        //         data: {
+        //             title: '自定义的html-plugins'
+        //         }
+        //     }
+        // }),
+        // viteMockServe({
+
+        // })
+        ViteMockPlugins()
     ],
     optimizeDeps: {
         exclude: [],    // 指定的数组中不进行依赖预构建
