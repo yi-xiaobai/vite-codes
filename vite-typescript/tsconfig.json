@@ -1,0 +1,7 @@
+{
+  "compilerOptions": {
+    // 是否跳过node_modules检查
+    "skipLibCheck": true,
+    "module": "esnext",
+  }
+}
