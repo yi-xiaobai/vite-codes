@@ -3,5 +3,9 @@
     // 是否跳过node_modules检查
     "skipLibCheck": true,
     "module": "esnext",
+    "moduleResolution": "node",
+    "lib": ["ES2017", "DOM"],
+    "types": ["node"],
+    "allowSyntheticDefaultImports": true
   }
 }
