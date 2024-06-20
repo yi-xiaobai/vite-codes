@@ -12,8 +12,13 @@ console.log('==>Get jsonFile', jsonFile);   // {name: 'alice', age: '20'}
 
 
 
-fetch('/api/users', {
-    method: 'post'
-}).then(res => {
-    console.log('==>Get res', res);
-})
+
+import './componentA.js'
+import './componentB.js'
+import './counter.js'
+
+// fetch('/api/users', {
+//     method: 'post'
+// }).then(res => {
+//     console.log('==>Get res', res);
+// })

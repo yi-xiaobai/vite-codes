@@ -20,6 +20,7 @@
     "lodash-es": "^4.17.21",
     "postcss-preset-env": "^9.5.14",
     "vite": "^5.2.10",
+    "vite-plugin-compression": "^0.5.1",
     "vite-plugin-html": "^3.2.2",
     "vite-plugin-mock": "^3.0.2"
   }
