@@ -1,4 +1,6 @@
-import './src/imageLoaders'
+import('./src/imageLoaders').then(res => {
+    console.log('==>Get res', res);
+})
 
 import './src/svgLoaders'
 
@@ -17,8 +19,8 @@ import './componentA.js'
 import './componentB.js'
 import './counter.js'
 
-// fetch('/api/users', {
-//     method: 'post'
-// }).then(res => {
-//     console.log('==>Get res', res);
-// })
+fetch('/api/users', {
+    method: 'post'
+}).then(res => {
+    console.log('==>Get res', res);
+})
