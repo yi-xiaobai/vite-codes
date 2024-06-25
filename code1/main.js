@@ -1,3 +1,5 @@
+//* 理解为动态导入
+//* 如果没有加载/src/imageLoaders 文件 即没有改变promise状态 那么then方法永远不会执行
 import('./src/imageLoaders').then(res => {
     console.log('==>Get res', res);
 })
